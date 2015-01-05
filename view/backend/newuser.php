@@ -26,6 +26,10 @@
                                     <li>New User</li>
                                 </ul>
                                 <h4>New User</h4>
+                                <?php //$lastID = $mainPerson->lastStaffID();
+                                        //$staffID = randNum($lastID);
+                                        //echo $staffID;
+                                        echo randNum($mainPeron->lastStaffID()); ?>
                             </div>
                         </div><!-- media -->
                     </div><!-- pageheader -->
@@ -186,7 +190,7 @@
                                     <option value='2'>Team Leader</option>
                                     <option value='3'>Staff</option>
                                 </select>
-                            </div>
+                            </div> 
                         </div>
                     </div><!-- tab-pane -->
                                         

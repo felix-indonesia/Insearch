@@ -48,4 +48,23 @@ function monthToString($e)
     }
     return $month;
 }
+
+//ADD RANDOM NUMBER 1-99
+function randNum($e)
+{
+    return $e += rand(1, 99);
+}
+
+//COMBINE DOB
+function combineDOB($a,$b,$c)
+{
+    return $a."-".$b."-".$c;
+}
+
+//ENCRYPT PASSWORD
+function encrypt($e)
+{
+    return sha1($e);
+}
+
 ?>

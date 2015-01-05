@@ -16,9 +16,19 @@
             }
 
             
+            //take last staffID
+            public function lastStaffID()
+            {
+                    return $this->db->query('SELECT staffID FROM person ORDER BY personID DESC LIMIT 0, 1')->fetchColumn();
+                
+            }
             
-            
-            
+             //take last personID
+            public function lastPersonID()
+            {
+                    return $this->db->query('SELECT personID FROM person ORDER BY personID DESC LIMIT 0, 1')->fetchColumn();
+                
+            }
             
             //add User
             public function addAdmin(Person $e)
@@ -45,16 +55,9 @@
                 $q->bindValue(':startDate', $e->getStartDate());
                 $q->bindValue(':status', $e->getStatus());
                 $q->execute();
-                //end
-                
-                
+                //end    
                 
             }
-            
-            
-            
-            
-            
             
             //add Staff
             public function addEmployee(Employee $person)
@@ -73,8 +76,7 @@
                 $q->bindValue(':userType', $person->getUserType(), PDO::PARAM_INT);
                 $q->execute();
                 
-                $personID = $this->db->query('SELECT personID FROM person ORDER BY personID DESC LIMIT 0, 1')->fetchColumn();
-                
+                $personID = $this->lastPersonID();
                 
                 $qq = 'INSERT INTO employee
                 SET personID = :personID, password = :password, staffID = :staffID';

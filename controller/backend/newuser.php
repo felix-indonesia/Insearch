@@ -15,8 +15,8 @@ if(isset($_POST['addAdmin']))
             'email'         => $_POST['email'],
             'phone'         => $_POST['phone'],
             'gender'        => $_POST['gender'], 
-            'password'      => 'password', 
-            'staffID'       => 12345,
+            'password'      => encrypt(combineDOB($_POST['dateOB'],$_POST['monthOB'],$_POST['yearOB'] ));, 
+            'staffID'       => '12345',
             'facebook'      => $_POST['facebook'],
             'linkedIn'      => $_POST['linkedIn'],
             'status'        => $_POST['status'],
@@ -27,7 +27,10 @@ if(isset($_POST['addAdmin']))
     
     ));
     
-    $mainPerson->addAdmin($admin);
+    if($_POST['userType' == 1]){
+        $mainPerson->addAdmin($admin);
+    }
+    
     $success = "SUCCESS ADD STAFF";
 }
 
