@@ -37,7 +37,7 @@
                             </div>
                         </div>
                         
-                        <a href='<?php echo $server_root;?>/profile'><div class='but but-dark centered but-350'><i class='fa fa-pencil fa-fw'></i> Update Profile </div></a>
+                        <a href='<?php echo $server_root;?>/profile/update/personal'><div class='but but-dark centered but-350'><i class='fa fa-pencil fa-fw'></i> Update Profile </div></a>
                     </div>
                     </div>
                 </div>

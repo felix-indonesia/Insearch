@@ -43,7 +43,7 @@
 
 
         //initial database
-        $db = new PDO('mysql:host=localhost;dbname=insearch','root','mysql');
+        $db = new PDO('mysql:host=localhost;dbname=open','root','mysql');
 
         //if there is error in login
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);

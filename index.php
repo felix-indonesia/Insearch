@@ -55,6 +55,7 @@ $router->post('/event/register/checkout', function(){include 'controller/fronten
 $router->get('/event/register/thankyou', function(){include 'controller/frontend/thankyou.php';});
 
 $router->get('/profile', function(){include 'controller/frontend/profile.php';});
+$router->get('/profile/update/(\w+)', function($module){include 'controller/frontend/profileupdate.php';});
 $router->get('/ticket/(\d+)', function($ticketid){include 'controller/frontend/ticket.php';});
 $router->get('/ticket/check/(\d+)', function($ticketid){include 'controller/frontend/check.php';});
 $router->get('/pdf/(\d+)', function($ticketid){include 'controller/frontend/pdf.php';});
