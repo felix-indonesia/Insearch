@@ -2,7 +2,7 @@
 include('db.php');
 session_start();
 $session_id='1'; //$session id
-$path = "uploads/";
+$path = "../../images/users/";
 
 	$valid_formats = array("jpg", "png", "gif", "bmp");
 	if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST")
@@ -21,9 +21,9 @@ $path = "uploads/";
 							$tmp = $_FILES['photoimg']['tmp_name'];
 							if(move_uploaded_file($tmp, $path.$actual_image_name))
 								{
-								mysqli_query($db,"UPDATE users SET profile_image='$actual_image_name' WHERE uid='$session_id'");
+								//mysqli_query($liveDB,"UPDATE users SET profile_image='$actual_image_name' WHERE uid='$session_id'");
 									
-									echo "<img src='uploads/".$actual_image_name."'  class='preview'>";
+									echo "<img src='".$path.$actual_image_name."'  class='preview img-circle img-responsive'>";
 								}
 							else
 								echo "failed";
@@ -40,4 +40,5 @@ $path = "uploads/";
 				
 			exit;
 		}
+
 ?>

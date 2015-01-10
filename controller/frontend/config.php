@@ -58,6 +58,15 @@ if(isset($perso))
     
 }
 
+
+//AJAX DATABASE
+define('DB_SERVER', 'localhost');
+define('DB_USERNAME', 'root');
+define('DB_PASSWORD', 'mysql');
+define('DB_DATABASE', 'open');
+$liveDB = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE);
+
+
 //INCLUDE ALL THE FUCTIONS
 include 'controller/functions.php';
 ?>

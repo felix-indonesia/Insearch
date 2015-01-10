@@ -1,8 +1,8 @@
 <?php
 define('DB_SERVER', 'localhost');
-define('DB_USERNAME', 'username');
-define('DB_PASSWORD', 'password');
-define('DB_DATABASE', 'database');
-$db = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE);
+define('DB_USERNAME', 'root');
+define('DB_PASSWORD', 'mysql');
+define('DB_DATABASE', 'open');
+$liveDB = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE);
 
 ?>

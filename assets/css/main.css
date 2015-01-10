@@ -355,15 +355,16 @@ section.section{
     border:1px solid #f60;
     border-radius:50%;
 }
-.blog-sidebar p{
-    font-size:20px;
-    color:#f60;
-}
+
 .blog img{
     margin-bottom: 20px;
 }
 .blog-sidebar img{
     padding-top:-5px;
+}
+.blog-sidebar p{
+    font-size:20px;
+    color:#f60;
 }
 .blog .details{
     padding:10px;
@@ -425,6 +426,8 @@ section.section{
 /*PROFILE PICTURE*/
 .blog .profile-picture{
     margin-right:20px;
+    max-width: 200px;
+    height:auto;
 }
 .blog .profile-picture h1{
     font-size:200px;
@@ -452,6 +455,24 @@ section.section{
 .blog ol{
     font-size:16px;
     line-height: 25px;
+}
+.blog-link{
+    background:#fff;
+    padding:10px;
+    margin:2px auto;
+    -webkit-transition:all 0.3s;-moz-transition:all 0.3s;-ms-transition:all 0.3s;-o-transition:all 0.3s;transition: all 0.3s
+}
+.blog-link:hover{
+    background:#f60;
+    color:#fff;
+}
+.blog-link h3{
+    text-align: left;
+    font-weight: 200;
+    padding:0;
+    margin:0;
+    line-height: 40px;
+    font-size: 21px;
 }
 
 
@@ -493,11 +514,24 @@ section.section{
 
 
 
+@media only screen and (min-width : 768px) {
+    .blog-link h3{
+        font-size:14px;
+    }
+}
+@media only screen and (min-width : 992px) {
+    .blog-link h3{
+        font-size:20px;
+    }
+}
+
 @media only screen and (max-width:766px){
     .collapsing, .in{background:#f3f3f3;}
     .collapsing ul li a, .in ul li a{color: #333!important;}
     .collapsing u li:hover{background:#f60;}
     .collapsing ul li a:hover, .in ul li:hover{background: #d7d7d7!important;}
+    .collapsing ul li ul li:hover, .in ul li ul li:hover{background:#333;color:#fff;}
+    .collapse ul li ul li:hover, .in ul li ul li:hover{background:#333;color:#fff;}
     .collapsing ul .btn-block{height: 60px;}
     .navbar-fixed-top{
         height:46px;
@@ -554,6 +588,9 @@ section.section{
     .blog .profile-picture{
         margin:0 auto;
         width:200px;
+    }
+    .blog-link h3{
+        font-size:18px;
     }
 }
 

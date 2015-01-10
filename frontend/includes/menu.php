@@ -17,7 +17,19 @@
                 <li><a href="<?php echo $server_root;?>/events/upcoming">Events</a></li>
                 <li><a class="nav-to" href="#services">What we do</a></li>
                 <li><a class="nav-to" href="#clients">Help</a></li>
-                  <li class="dropdown">
+                
+                
+                <li class="dropdown">
+                    <a href="" class="dropdown-toggle" data-toggle="dropdown">Profile <b class="caret"></b></a>
+                    <ul class="dropdown-menu sign-out">
+                        <li><a href="<?php echo $server_root;?>/profile"><i class="fa fa-user fa-fw"></i> My Profile</a></li>
+                        <li class="divider"></li>
+                        <li><a href="<?php echo $server_root;?>/profile/update/personal"><i class="fa fa-pencil fa-fw"></i> Update Profile</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#"><i class="fa fa-sign-out fa-fw"></i> Sign Out</a></li>
+                    </ul>
+                </li>
+                <!--<li class="dropdown">
                      <a href="" class="dropdown-toggle" data-toggle="dropdown">Sign in <b class="caret"></b></a>
                      <ul class="dropdown-menu" style="padding: 15px;min-width: 350px;">
                         <li>
@@ -45,7 +57,7 @@
                         <li class="divider"></li>
                          <a type="button" href='<?php echo $server_root;?>/signup/student' class="btn btn-block btn-lg btn-default"><i class="fa fa-user fa-fw"></i>Create Account</a>
                      </ul>
-                  </li>
+                  </li>-->
                </ul>
         </div>
     </div>

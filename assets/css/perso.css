@@ -38,6 +38,7 @@
 .margin-bottom-4x{margin-bottom:40px;}
 .margin-bottom-5x{margin-bottom:50px;}
 .margin-top-1x{margin-top:10px;}
+.margin-top-15x{margin-top:15px;}
 .margin-top-2x{margin-top:20px;}
 .margin-top-3x{margin-top:30px;}
 .margin-top-4x{margin-top:40px;}
@@ -53,6 +54,12 @@
 .pb-4x{padding-bottom:40px;}
 .pb-5x{padding-bottom:50px;}
 .pd-1x{padding:10px;}
+.pt-10{padding-top:10px;}
+.pt-15{padding-top:15px;}
+.pt-20{padding-top:20px;}
+.pt-30{padding-top:30px;}
+.pt-40{padding-top:40px;}
+
 
 /*CURSORS*/
 .cursor-no-drop{cursor:no-drop;}
@@ -103,6 +110,19 @@
 
 /*TEXT DECORATION*/
 .line-through{text-decoration: line-through;}
+
+/*WIDTH*/
+
+
+/*MAX WIDTH*/
+.mw100{max-width: 100px;}
+.mw150{max-width: 150px;}
+.mw200{max-width: 200px;}
+.mw250{max-width: 250px;}
+.mw300{max-width: 300px;}
+.mw320{max-width: 320px;}
+.mw350{max-width: 350px;}
+
 
 /*HEIGHTS*/
 .height10{height:10px;line-height:10px;}
@@ -155,9 +175,10 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
 .btn-black-transparent{border:1px solid #333;color:#333;text-transform: uppercase;font-size:20px;height:40px;line-height:35px;width:300px;margin:0 auto;text-align: center;}
 .btn-black-transparent:hover{background:#333;color:#fff;}
 .transition{-webkit-transition:all 0.5s;-moz-transition:all 0.5s;-ms-transition:all 0.5s;-o-transition:all 0.5s;transition: all 0.5s;}
-.btn:focus {
-    outline:none;
-}
+.btn:focus {outline:none;}
+.btn-file {position: relative;overflow: hidden;}
+.btn-file input[type=file] {position: absolute;top: 0;right: 0;min-width: 100%;min-height: 100%;font-size: 100px;text-align: right;filter: alpha(opacity=0);opacity: 0;outline: none;background:#fff;cursor: inherit;display: block;}
+
 /*BUTTONS*/
 .but{font-family:Roboto, Futura, sans-serif;height:40px;line-height: 35px;text-align: center;font-size:16px;font-weight: 300;-webkit-transition:all 0.5s;-moz-transition:all 0.5s;-ms-transition:all 0.5s;-o-transition:all 0.5s;transition: all 0.5s;overflow: hidden;text-overflow: ellipsis;}
 .but-350{width:100%;max-width: 350px;}
