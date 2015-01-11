@@ -30,7 +30,14 @@ body {
 a {color: #f60;word-wrap: break-word;-webkit-transition: color 0.1s ease-in, background 0.1s ease-in;-moz-transition: color 0.1s ease-in, background 0.1s ease-in;
     -ms-transition: color 0.1s ease-in, background 0.1s ease-in;-o-transition: color 0.1s ease-in, background 0.1s ease-in;transition: color 0.1s ease-in, background 0.1s ease-in;}
 a:hover,a:focus {color: #08c;text-decoration: none;outline: none !important;}
-
+.content{
+    display:table-row;
+    height: 1px;
+}
+.content-ex{
+    height:100%;
+}
+.co
 .container h2{
     border-left:8px solid #f60;
     font-weight:500 !important;

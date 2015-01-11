@@ -6,19 +6,19 @@
     <title>Update Profile</title>
     <?php include 'frontend/includes/head.php';?> 
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
         <script>
-            $j = jQuery.noConflict(true);
+            $j = jQuery.nonConflict(true);
         </script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
     <script src="<?php echo $server_root;?>/assets/js/bootstrap.min.js"></script>  
     <script src="<?php echo $server_root;?>/assets/js/jquery.form.js"></script>  
     <script src="<?php echo $server_root;?>/assets/js/select2.js"></script>  
     <script type="text/javascript" >
      $(document).ready(function() { 
-                $j('#photoimg').live('change', function(){ 
-                    $j("#preview").html('');
-                    $j("#preview").html('<img src="/insearch/images/sm/web/loader.gif" alt="Uploading...."/>');
-                    $j("#imageform").ajaxForm({
+                $('#photoimg').live('change', function(){ 
+                    $("#preview").html('');
+                    $("#preview").html('<img src="/insearch/images/sm/web/loader.gif" alt="Uploading...."/>');
+                    $("#imageform").ajaxForm({
                         target: '#preview'
                     }).submit();
 
