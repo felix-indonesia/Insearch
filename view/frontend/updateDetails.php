@@ -5,28 +5,6 @@
     <head>
     <title>Update Profile</title>
     <?php include 'frontend/includes/head.php';?> 
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
-        <script>
-            $j = jQuery.noConflict(true);
-        </script>
-    <script src="<?php echo $server_root;?>/assets/js/bootstrap.min.js"></script>  
-    <script src="<?php echo $server_root;?>/assets/js/jquery.form.js"></script>  
-    <script src="<?php echo $server_root;?>/assets/js/select2.js"></script>  
-    <script type="text/javascript" >
-     $(document).ready(function() { 
-                $j('#photoimg').live('change', function(){ 
-                    $j("#preview").html('');
-                    $j("#preview").html('<img src="/insearch/images/sm/web/loader.gif" alt="Uploading...."/>');
-                    $j("#imageform").ajaxForm({
-                        target: '#preview'
-                    }).submit();
-
-                });
-                $("#multi").select2();  
-            }); 
-    </script>    
-        
 </head>
     
 <body class='page'>
@@ -62,6 +40,7 @@
                         <div class='col-sm-8'>
                         <form method="POST" action='' id="form">  
                         <div class="tab-content">
+                        <div class='row'>
                             <div class="errorForm col-sm-12"></div>
                             <div class='form-group col-sm-12'>
                                 <div class="input-group">
@@ -104,7 +83,11 @@
                             <input  type="text" class="form-control input-lg" placeholder='Address' name='address'/>
                             </div>
                         </div>
-                        
+                            
+                    </div><!--END OF ROW-->
+                            
+                           
+                    <div class='row'>
                         <div class="form-group col-sm-4">
                           <select class="form-control input-lg" name="gender">
                                 <option selected>Day of Birth</option>
@@ -117,6 +100,7 @@
                             </select>
                         </div>
                         
+                    
                         <div class="form-group col-sm-4">
                           <select class="form-control input-lg" name="gender">
                                 <option selected>Month of Birth</option>
@@ -148,7 +132,9 @@
                               ?>
                             </select>
                         </div>
-                        
+                    </div><!--END OF ROW-->
+                            
+                    <div class='row'>
                         <div class="form-group col-sm-6">
                           <select class="form-control input-lg" name="gender">
                                 <option selected>Gender</option>
@@ -157,13 +143,16 @@
                             </select>
                         </div>
                         
+                        
                         <div class="form-group col-sm-6">
                           <select class="form-control input-lg" name="country" >
                                 <option selected>Country (Current Passport)</option>
                                 <?php include 'frontend/includes/countries.html';?>
                             </select>
                         </div>
-                        
+                    </div><!--END OF ROW-->
+                    
+                            
                         <div class="form-group col-sm-12">
                             <select id="multi" data-placeholder="Choose the languages you speak" multiple class="w350">
                                 <option value="">Choose One or more</option>
@@ -177,7 +166,11 @@
                         
                     </div>
                     </form>
-                        </div>
+                            
+                    </div>
+                    
+                    
+                    
                     </div>
                     </div>
                 </div>
@@ -185,22 +178,24 @@
             
             
             
+            
+            
             <div class='col-sm-4 col-md-4 pt-15'>
-                <a href=''><div class="blog-link shadow">
+                <a href='<?php echo $server_root?>/profile/update/about'><div class="blog-link shadow">
                     <h3><i class='fa fa-info fa-fw'></i> Update your description</h3>
                 </div></a>
                 
-                <a href=''><div class="blog-link shadow">
+                <a href='<?php echo $server_root?>/profile/update/skills'><div class="blog-link shadow">
                     <h3><i class='fa fa-gears fa-fw'></i> Update your Skills</h3>
                  
                 </div></a>
                 
-                <a href=''><div class="blog-link shadow">
+                <a href='<?php echo $server_root?>/profile/update/qualifications'><div class="blog-link shadow">
                     <h3><i class='fa fa-graduation-cap fa-fw'></i> Update your qualifications</h3>
                     
                 </div></a>
                 
-                <a href=''><div class="blog-link shadow">
+                <a href='<?php echo $server_root?>/profile/update/experience'><div class="blog-link shadow">
                     <h3><i class='fa fa-refresh fa-fw'></i> Update your experience</h3>
                 
                 </div></a>
@@ -217,20 +212,33 @@
     
 <?php include 'frontend/includes/footer.php';?>    
 </body>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+<script src="<?php echo $server_root;?>/assets/js/bootstrap.min.js"></script>  
+<script src="<?php echo $server_root;?>/assets/js/jquery.form.js"></script>  
+<script src="<?php echo $server_root;?>/assets/js/select2.js"></script>      
+<script src="<?php echo $server_root;?>/assets/js/jquery.maskedinput.min.js"></script>      
+<script type="text/javascript" >
+jQuery(document).ready(function() {
+    $('#photoimg').die('click').live('change', function()			{
+               //$("#preview").html('');
+        $("#imageform").ajaxForm({target: '#preview',
+             beforeSubmit:function(){
+            $("#imageloadstatus").show();
+             $("#imageloadbutton").hide();
+             },
+            success:function(){
 
-<script>
-    /*jQuery(document).ready(function($) {        
-        // Error Message In One Container
-        jQuery("#valWizard").validate({
-            errorLabelContainer: jQuery("#valWizard div.errorForm")
-        });
-        
-        jQuery("#phone").mask("99 9999 9999");
-        tinymce.init({selector:'.tiny'}); 
-
-        
+             $("#imageloadstatus").hide();
+             $("#imageloadbutton").show();
+            },
+            error:function(){
+             $("#imageloadstatus").hide();
+            $("#imageloadbutton").show();
+            } }).submit();
     });
     
-*/
+});
 </script>
+
+
 </html>

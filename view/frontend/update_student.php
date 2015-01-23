@@ -13,16 +13,10 @@
 <main class='content content-ex'>
 <section class='section bg-white'>
     <div class="container container-responsive">
-        <div class='block block-top'>
-            <h4>User Signup Form</h4>
-        </div>
-        
-        
         <div class="contentpanel contentpanel-wizard">
-                       
+        <h2>Bounthanh Chandarah</h2>
         <div class="row">
             <div class="col-md-12">
-
                 <form method="POST" action='' id="form">  
                 <div class="tab-content">
                     <div class="row">
@@ -30,42 +24,42 @@
                         <div class='form-group col-sm-6'>
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-user fa-fw"></i></span>
-                                <input  type="text" class="form-control input-lg firstname" placeholder='First Name' name='firstname' title='Enter your first name' required/>
+                                <input  type="text" class="form-control input-lg firstname" name='firstname' value='Bounthanh' required/>
                             </div>
                         </div>
                         
                         <div class='form-group col-sm-6'>
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-user fa-fw"></i></span>
-                                <input  type="text" class="form-control input-lg lastname" placeholder='Lastname Name' name='lastname' title='Please enter your last name' required/>
+                                <input  type="text" class="form-control input-lg lastname" value='Chandarah' name='lastname' title='Please enter your last name' required/>
                             </div>
                         </div>
                         
                         <div class='form-group col-sm-6'>
                             <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-smile-o fa-fw"></i></span>
-                            <input  type="text" class="form-control input-lg" placeholder='Preferred Name' name='nickname'/>
+                            <input  type="text" class="form-control input-lg" value='BT' name='nickname'/>
                             </div>
                         </div>
                         
                         <div class='form-group col-sm-6'>
                             <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-send fa-fw"></i></span>
-                            <input  type="text" class="form-control input-lg email" placeholder='Personal Email (Not Insearch email)' name='email' title='Please enter your email' required/>
+                            <input  type="text" class="form-control input-lg email" value='bt@gmail.com' name='email' title='Please enter your email' required/>
                             </div>
                         </div>
                         
                         <div class='form-group col-sm-6'>
                             <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-phone fa-fw"></i></span>
-                            <input  type="text" class="form-control input-lg" placeholder='Phone Number' name='phone' id='phone'/>
+                            <input  type="text" class="form-control input-lg" value='04 2294 2032' name='phone' id='phone'/>
                             </div>
                         </div>
                         
                         <div class='form-group col-sm-6'>
                             <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-map-marker fa-fw"></i></span>
-                            <input  type="text" class="form-control input-lg" placeholder='Address' name='address'/>
+                            <input  type="text" class="form-control input-lg" value='23 Jump St, Sydney NSW 2000' name='address'/>
                             </div>
                         </div>
                         
@@ -84,19 +78,12 @@
                         <div class="form-group col-sm-2">
                           <select class="form-control input-lg" name="gender">
                                 <option selected>Month of Birth</option>
-                                <option value="01">January</option>
-                                <option value="02">February</option>
-                                <option value="03">March</option>
-                                <option value="04">April</option>
-                                <option value="05">May</option>
-                                <option value="06">June</option>
-                                <option value="07">July</option>
-                                <option value="08">August</option>
-                                <option value="09">September</option>
-                                <option value="10">October</option>
-                                <option value="11">November</option>
-                                <option value="12">December</option>
-                               
+                                <?php
+                                    for($i = 1; $i <= 12; $i++)
+                                    {
+                                        echo "<option value='".$i."'>".monthToString($i)."</option>";
+                                    }
+                                ?>
                             </select>
                         </div>
                         
@@ -135,15 +122,15 @@
                 </div><!-- tab-content -->
                                     
 
-<button type="submit" class="btn btn-orange btn-lg pull-right"><i class='fa fa-check fa-fw'></i> Submit</button>
+<button type="submit" class="btn btn-orange btn-lg pull-right"><i class='fa fa-floppy-o fa-fw'></i> Save</button>
 <div class='clear'></div>
                                     
                                 </form><!-- panel-wizard -->
                 
                 <hr>
                             </div><!-- col-md-6 -->
-                        </div><!-- row -->
-<a href='<?php echo $server_root;?>/signup/volunteer'><div class='but but-dark but-350 centered'>Create a volunteer account instead <i class='fa fa-caret-right fa-fw'></i></div></a>   
+                        </div><!-- row -->  
+            <a href='<?php echo $server_root;?>/signup/volunteer'><div class='but but-dark but-350 centered'>Become a volunteer <i class='fa fa-caret-right fa-fw'></i></div></a> 
                     </div><!-- contentpanel -->
     </div>
 </section>
@@ -155,13 +142,5 @@
 <?php include 'frontend/includes/footer.php';?>    
 </body>
 <?php include 'frontend/includes/js.php';?>  
-
-
-
-<script src="<?php echo $server_root;?>/assets/js/jquery.validate.min.js"></script>
-<script src="<?php echo $server_root;?>/assets/js/jquery.maskedinput.min.js"></script>
-<script src="<?php echo $server_root;?>/assets/js/select2.min.js"></script>
-<script src="//tinymce.cachefly.net/4.1/tinymce.min.js"></script>
-    
 
 </html>

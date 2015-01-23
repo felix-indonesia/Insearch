@@ -16,7 +16,7 @@
                 <li><a href='<?php echo $server_root;?>/'>Home</a></li>
                 <li><a href="<?php echo $server_root;?>/events/upcoming">Events</a></li>
                 <li><a class="nav-to" href="#services">What we do</a></li>
-                <li><a class="nav-to" href="#clients">Help</a></li>
+                <li><a class="nav-to" href="<?php echo $server_root;?>/faq/">Help</a></li>
                 
                 
                 <li class="dropdown">

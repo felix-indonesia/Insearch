@@ -42,6 +42,11 @@
                 <div class="blog shadow bg-white dashboard">
                     <h4>Dashboard</h4>
                 </div>
+                
+                <a href='<?php echo $server_root?>/eventmanager/1024/insearch-masquerade-ball'><div class="blog-link shadow">
+                    <h3><i class='fa fa-th fa-fw'></i> Event Manager</h3>
+                </div></a>
+                
                 <div class="blog shadow blog-sidebar">
                     <p>Want to attend this event?</p>
                     <a href='<?php echo $server_root;?>/event/register/1024'><div class='but but-dark centered'>Register Here <i class='fa fa-caret-right fa-fw'></i></div></a>
@@ -52,6 +57,8 @@
                     <small>* Registrations are not opened yet, please check again later.</small>
                     <a href='#'><div class='but but-dark centered cursor-no-drop'>Receive a notification <i class='fa fa-caret-right fa-fw'></i></div></a>
                 </div>
+                
+                
             </div>
             
         

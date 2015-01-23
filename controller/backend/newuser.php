@@ -15,7 +15,7 @@ if(isset($_POST['addAdmin']))
             'email'         => $_POST['email'],
             'phone'         => $_POST['phone'],
             'gender'        => $_POST['gender'], 
-            'password'      => encrypt(combineDOB($_POST['dateOB'],$_POST['monthOB'],$_POST['yearOB'] ));, 
+            'password'      => encrypt(combineDOB($_POST['dateOB'],$_POST['monthOB'],$_POST['yearOB'] )), 
             'staffID'       => '12345',
             'facebook'      => $_POST['facebook'],
             'linkedIn'      => $_POST['linkedIn'],

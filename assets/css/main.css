@@ -30,7 +30,13 @@ body {
 a {color: #f60;word-wrap: break-word;-webkit-transition: color 0.1s ease-in, background 0.1s ease-in;-moz-transition: color 0.1s ease-in, background 0.1s ease-in;
     -ms-transition: color 0.1s ease-in, background 0.1s ease-in;-o-transition: color 0.1s ease-in, background 0.1s ease-in;transition: color 0.1s ease-in, background 0.1s ease-in;}
 a:hover,a:focus {color: #08c;text-decoration: none;outline: none !important;}
-
+.content{
+    display: table-row;
+    height: 1px;
+}
+.content-ex{
+    height:100%;
+}
 .container h2{
     border-left:8px solid #f60;
     font-weight:500 !important;
@@ -276,7 +282,7 @@ section.section{
 .block h4, .section h4{
     font-family: Nimbuss, Roboto, 'Fira Sans', Futura, 'Century Gothic', Lato;
     font-weight: 500;
-    font-size:40px;
+    font-size:35px;
     color:#333;
     text-align: center;
 }
@@ -288,12 +294,17 @@ section.section{
 }
 .events-list .event{
     margin:10px 0;
+    position:relative;
+    background: #fff;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 20px;
 }
 .events-list .event img{
     margin-bottom: 10px;
 }
 .events-list .event .heading{
-    font-size:24px;
+    font-size:20px;
     font-weight:400;
     width:100%;
     height:30px;
@@ -302,6 +313,7 @@ section.section{
     overflow:hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+    padding-left:10px;
 }
 .events-list .event .body{
     text-align: left;
@@ -309,13 +321,14 @@ section.section{
     font-size: 13px;
     color:#555;
     font-family: Roboto, Lato;
-    height:120px;
+    padding:10px;
+    padding-top: 0;
 }
 .events-list .event .body .list-unstyled{
     line-height: 22px;
 }
 .events-list .event .fees{
-    font-size:32px;
+    font-size:22px;
     font-weight:600;
     float:right;
     color:#f50;
@@ -323,10 +336,33 @@ section.section{
 }
 .events-list .event .fees span{
     text-decoration: line-through;
-    font-size:20px;
+    font-size:14px;
 }
 .events-list .event .foot{
     height:60px;
+}
+.events-list .event > .event-date{
+    position:absolute;
+    width:40px;
+    height:40px;
+    background:#f60;
+    text-align: center;
+    color: #fff;
+    border-radius: 0px 0px 8px 0px;
+    border:1px solid #fff;
+    border-left:none;
+    border-top:none;
+}
+.events-list .event > .event-date > .event-month{
+    font-weight: 300;
+    text-transform: uppercase;
+    font-size:11px;
+    font-family:Lato, Roboto;
+}
+.events-list .event > .event-date > .event-day{
+    font-weight: 600;
+    font-size:18px;
+    font-family:Lato, Roboto;
 }
 
 /*SINGLE EVENT PAGE*/
@@ -363,7 +399,7 @@ section.section{
     padding-top:-5px;
 }
 .blog-sidebar p{
-    font-size:20px;
+    font-size:18px;
     color:#f60;
 }
 .blog .details{
@@ -406,6 +442,16 @@ section.section{
     text-align: center;
     padding:10px;
 }
+.blog-main h1{
+    font-size:20px;
+    font-weight: 400;
+    text-align: left;
+    color:#f1f1f1;
+    background:#f60;
+    line-height: 50px;
+    padding-left: 5px;
+    font-family: Futura, 'Century Gothic', Lato;
+}
 .blog small{
     font-size:13px;
 }
@@ -431,6 +477,7 @@ section.section{
 }
 .blog .profile-picture h1{
     font-size:200px;
+    background:#fff;
 }
 .blog .profile-picture .ok{
     color:#27bc1b;
@@ -439,8 +486,8 @@ section.section{
     color:#f00;
 }
 .blog .next{
-    font-size:17px;
-    line-height:30px;
+    font-size:14px;
+    line-height:25px;
     font-weight:200;
     padding:0 10px;
     color:#555;
@@ -464,6 +511,8 @@ section.section{
 }
 .blog-link:hover{
     background:#f60;
+}
+.blog-link:hover h3{
     color:#fff;
 }
 .blog-link h3{
@@ -473,6 +522,20 @@ section.section{
     margin:0;
     line-height: 40px;
     font-size: 21px;
+    color:#f60;
+}
+.blog-link p{
+    padding-left:20px;
+    font-size: 18px;
+}
+.blog-link .list-unstyled{
+    line-height: 30px;
+}
+.blog .table{
+    padding:0 10px;
+}
+.blog .table tbody > tr > td{
+    vertical-align: middle;
 }
 
 
@@ -512,7 +575,70 @@ section.section{
 }
 
 
+.volunteers-list{
+    width:100%;
+    margin:0 auto;
+    padding:0;
+}
+.volunteers-list .vol{
+    width:100%;
+    margin:2px auto;
+    padding:10px 5px;
+}
+.volunteers-list .sign-out .vol-details{
+    border-right:1px solid #fff;
+}
+.volunteers-list .sign-in .vol-details{
+    border-right:1px solid #333;
+}
 
+.volunteers-list a > .vol h4{
+    font-size:16px;
+    font-weight: 600;
+    color:#333;
+    text-align: left;
+}
+.volunteers-list a > .sign-out h4{
+    color:#fff;
+}
+.volunteers-list .sign-in{
+    background:#fff;
+}
+.volunteers-list .sign-out{
+    background:#f00;
+}
+.volunteers-list .sign-out:hover, .volunteers-list .sign-in:hover{
+    background: #777;   
+}
+.faq-accordion h3{
+    min-height: 30px;
+    color:#f60;
+    font-weight: 600;
+    background: #fff;
+    font-family: Nimbuss, Roboto, 'Fira Sans', Futura, 'Century Gothic', Lato;
+    font-size:18px;
+    text-align: left;
+    padding:5px;
+    margin:0;
+    margin-top:2px;
+}
+.faq-accordion h3:hover{
+    cursor: pointer;
+    color:#000;
+}
+.faq-accordion h3:focus{
+    outline:none;
+    outline-color: #fff;
+}
+.faq-accordion .accordion-content{
+    padding:10px;
+    margin-bottom:2px;
+    height:auto;
+    font-size:14px;
+    color:#777;
+    font-weight: 400;
+    font-family: Roboto, Lato, Futura, sans-serif;
+}
 
 @media only screen and (min-width : 768px) {
     .blog-link h3{
@@ -615,6 +741,10 @@ section.section{
 }
 
 @media only screen and (max-width:480px){
+    .container h2{
+        font-size:35px;
+        line-height: 40px;
+    }
     .row .dashboard{
         display:none;
     }
@@ -623,6 +753,9 @@ section.section{
     }
     .accordion .accordion-content{
         padding-bottom:30px;
+    }
+    .faq-accordion h3{
+        font-size:16px;
     }
 
 }

@@ -1,7 +1,7 @@
 <?php
 include('db.php');
 session_start();
-$session_id='1'; //$session id
+$personid = '1'; //$session id
 $path = "../../images/users/";
 
 	$valid_formats = array("jpg", "png", "gif", "bmp");
@@ -15,13 +15,13 @@ $path = "../../images/users/";
 					list($txt, $ext) = explode(".", $name);
 					if(in_array($ext,$valid_formats))
 					{
-					if($size<(1024*1024))
+					if($size<(2048*2048))
 						{
 							$actual_image_name = time().substr(str_replace(" ", "_", $txt), 5).".".$ext;
 							$tmp = $_FILES['photoimg']['tmp_name'];
 							if(move_uploaded_file($tmp, $path.$actual_image_name))
 								{
-								//mysqli_query($liveDB,"UPDATE users SET profile_image='$actual_image_name' WHERE uid='$session_id'");
+								//mysqli_query($liveDB,"UPDATE users SET picture = '$actual_image_name' WHERE personid = '$personid'");
 									
 									echo "<img src='".$path.$actual_image_name."'  class='preview img-circle img-responsive'>";
 								}
@@ -29,7 +29,7 @@ $path = "../../images/users/";
 								echo "failed";
 						}
 						else
-						echo "Image file size max 1 MB";					
+						echo "Image file max size 2 MB";					
 						}
 						else
 						echo "Invalid file format..";	

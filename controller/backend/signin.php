@@ -1,5 +1,4 @@
 <?php
-include 'controller/backend/config.php';
 
 
 //LOGIN FUCNTION

@@ -34,7 +34,7 @@
                     </ul>
                                     
                                     
-                <div class="tab-content">
+                <div class="tab-content"> 
                     <div class="tab-pane" id="tab1-4">
                     <div class="row">
                         <div class="errorForm col-sm-12"></div>

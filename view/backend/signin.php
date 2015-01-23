@@ -58,7 +58,7 @@
                     
                 </div><!-- panel-body -->
                 <div class="panel-footer">
-                    <a href="signup.html" class="btn btn-dark-grey btn-block">Forgot your password? Reset it here</a>
+                    <a href="" class="btn btn-dark-grey btn-block">Forgot your password? Reset it here</a>
                 </div><!-- panel-footer -->
             </div><!-- panel -->
             

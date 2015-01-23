@@ -47,17 +47,26 @@ $router->post('/signup/(\w+)', function($type){include 'controller/frontend/sign
 $router->get('/events/(\w+)', function($type){include 'controller/frontend/events.php';});
 $router->post('/events/(\w+)', function($type){include 'controller/frontend/events.php';});
 
+$router->get('/eventmanager(/\d+(/[a-z0-9_-]+)?)?', function($id, $group){include 'controller/frontend/eventmanager.php';});
 $router->get('/event(/\d+(/[a-z0-9_-]+)?)?', function($id, $url){include 'controller/frontend/event.php';});
 $router->get('/event/register/(\d+)', function($eventid){include 'controller/frontend/attend.php';});
 $router->get('/event/register/checkout', function(){include 'controller/frontend/checkout.php';});
 $router->post('/event/register/checkout', function(){include 'controller/frontend/checkout.php';});
 $router->get('/event/register/thankyou', function(){include 'controller/frontend/thankyou.php';});
 
+
+
+
+$router->match('GET|POST', '/profile/student/', function() {include 'controller/frontend/profile_student.php';});
+$router->match('GET|POST', '/profile/student/update', function() {include 'controller/frontend/update_student.php';});
+
 $router->get('/profile', function(){include 'controller/frontend/profile.php';});
 $router->get('/profile/update/(\w+)', function($module){include 'controller/frontend/profileupdate.php';});
 $router->get('/ticket/(\d+)', function($ticketid){include 'controller/frontend/ticket.php';});
 $router->get('/ticket/check/(\d+)', function($ticketid){include 'controller/frontend/check.php';});
 $router->get('/pdf/(\d+)', function($ticketid){include 'controller/frontend/pdf.php';});
+$router->get('/faq/', function(){include 'controller/frontend/faq.php';});
+$router->get('/faq/(\d+)', function($ticketid){include 'controller/frontend/faq.php';});
 
 
 

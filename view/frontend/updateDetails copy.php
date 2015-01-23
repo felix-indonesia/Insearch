@@ -4,24 +4,23 @@
 <html lang="en">
     <head>
     <title>Update Profile</title>
-    <?php include 'frontend/includes/head.php';?>
-    <script src="<?php echo $server_root;?>/assets/js/jquery.min.js"></script>  
+    <?php include 'frontend/includes/head.php';?> 
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
     <script src="<?php echo $server_root;?>/assets/js/bootstrap.min.js"></script>  
     <script src="<?php echo $server_root;?>/assets/js/jquery.form.js"></script>  
     <script src="<?php echo $server_root;?>/assets/js/select2.js"></script>  
     <script type="text/javascript" >
-     $(document).ready(function() { 
-
-                $('#photoimg').live('change', function(){ 
-                    $("#preview").html('');
-                    $("#preview").html('<img src="loader.gif" alt="Uploading...."/>');
-                    $("#imageform").ajaxForm({
-                        target: '#preview'
-                    }).submit();
-
-                });
-                $("#multi").select2();  
-            }); 
+    $.noConflict();
+    jQuery(document).ready(function($) { 
+        $('#photoimg').live('change', function(){ 
+            $("#preview").html('');
+            $("#preview").html('<img src="/insearch/images/sm/web/loader.gif" alt="Uploading...."/>');
+            $("#imageform").ajaxForm({
+                target: '#preview'
+            }).submit();
+        }); 
+    }); 
     </script>    
         
 </head>
@@ -183,21 +182,21 @@
             
             
             <div class='col-sm-4 col-md-4 pt-15'>
-                <a href=''><div class="blog-link shadow">
+                <a href='<?php echo $server_root?>/profile/update/about'><div class="blog-link shadow">
                     <h3><i class='fa fa-info fa-fw'></i> Update your description</h3>
                 </div></a>
                 
-                <a href=''><div class="blog-link shadow">
+                <a href='<?php echo $server_root?>/profile/update/skills'><div class="blog-link shadow">
                     <h3><i class='fa fa-gears fa-fw'></i> Update your Skills</h3>
                  
                 </div></a>
                 
-                <a href=''><div class="blog-link shadow">
+                <a href='<?php echo $server_root?>/profile/update/qualifications'><div class="blog-link shadow">
                     <h3><i class='fa fa-graduation-cap fa-fw'></i> Update your qualifications</h3>
                     
                 </div></a>
                 
-                <a href=''><div class="blog-link shadow">
+                <a href='<?php echo $server_root?>/profile/update/experience'><div class="blog-link shadow">
                     <h3><i class='fa fa-refresh fa-fw'></i> Update your experience</h3>
                 
                 </div></a>

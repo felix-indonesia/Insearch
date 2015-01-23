@@ -26,7 +26,7 @@
         //In case there is already a session, keep using it.
         if(isset($_SESSION['admin']))
         {
-            $admin = $_SESSION['admin'];
+            $admin = $_SESSION['PHPSESSID'];
 
         }
 

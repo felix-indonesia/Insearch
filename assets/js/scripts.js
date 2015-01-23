@@ -81,6 +81,14 @@ jQuery(document).ready(function ($) {
         classToAdd: 'showit animated bounceInDown',
         offset: 100
     });
+    $('.bounce-in-left').addClass('hideit').viewportChecker({
+        classToAdd: 'showit animated bounceInLeft',
+        offset: 100
+    });
+    $('.bounce-in-right').addClass('hideit').viewportChecker({
+        classToAdd: 'showit animated bounceInRight',
+        offset: 100
+    });
     
     //Feedback slider
     $('#quote-carousel').carousel({
