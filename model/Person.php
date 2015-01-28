@@ -18,12 +18,14 @@ class Person extends Constructor
                 $phone,
                 $startDate,
                 $userType,
-                $facebook,
-                $linkedIn,
+                $staffID,
                 $studyStatus;
  
-    
-    
+    //is admin
+    public function isAdmin()
+    {
+        return $this->getUserType() == 3;
+    }
     
     
     
@@ -45,6 +47,10 @@ class Person extends Constructor
     
     public function getNickName(){
         return $this->nickName;
+    }
+    
+    public function getStaffID(){
+        return $this->staffID;
     }
     
     public function getDateOB(){
@@ -109,6 +115,10 @@ class Person extends Constructor
 	
 	public function setPersonID($e){
         $this->personID = $e;
+    }
+    
+    public function setStaffID($e){
+        $this->staffID = $e;
     }
     
     public function setFirstName($e){

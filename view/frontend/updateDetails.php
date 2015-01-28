@@ -5,6 +5,31 @@
     <head>
     <title>Update Profile</title>
     <?php include 'frontend/includes/head.php';?> 
+<<<<<<< HEAD
+=======
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script>
+            $j = jQuery.nonConflict(true);
+        </script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+    <script src="<?php echo $server_root;?>/assets/js/bootstrap.min.js"></script>  
+    <script src="<?php echo $server_root;?>/assets/js/jquery.form.js"></script>  
+    <script src="<?php echo $server_root;?>/assets/js/select2.js"></script>  
+    <script type="text/javascript" >
+     $(document).ready(function() { 
+                $('#photoimg').live('change', function(){ 
+                    $("#preview").html('');
+                    $("#preview").html('<img src="/insearch/images/sm/web/loader.gif" alt="Uploading...."/>');
+                    $("#imageform").ajaxForm({
+                        target: '#preview'
+                    }).submit();
+
+                });
+                $("#multi").select2();  
+            }); 
+    </script>    
+        
+>>>>>>> ed485ddd70457f0a914bd9abb8a825691f4eff52
 </head>
     
 <body class='page'>

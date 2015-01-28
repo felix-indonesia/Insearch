@@ -52,11 +52,11 @@ function monthToString($e)
 //ADD RANDOM NUMBER 1-99
 function randNum($e)
 {
-    return $e += rand(1, 99);
+    return $e += rand(13, 27);
 }
 
 //COMBINE DOB
-function combineDOB($a,$b,$c)
+function combineDOB($a, $b, $c)
 {
     return $a."-".$b."-".$c;
 }
@@ -65,6 +65,21 @@ function combineDOB($a,$b,$c)
 function encrypt($e)
 {
     return sha1($e);
+}
+
+function validName($e){
+    $ban = "/[\^<,\"@\/\{\}\(\)\*\$%\?=>:\|;#]+/i";
+    return !preg_match($ban, $e);
+}
+
+function validEmail($e){
+    return filter_var($e, FILTER_VALIDATE_EMAIL);
+}
+
+function personalEncrypt($e){
+    $cryptKey  = 'qJB0rGtIn5UB1xG03efyCp';
+    $qEncoded      = base64_encode( mcrypt_encrypt( MCRYPT_RIJNDAEL_256, md5( $cryptKey ), $e, MCRYPT_MODE_CBC, md5( md5( $cryptKey ))));
+    return( $qEncoded );
 }
 
 ?>

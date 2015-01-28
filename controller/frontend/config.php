@@ -3,6 +3,7 @@ date_default_timezone_set('Australia/Sydney');
 
 //FOR LOCAL DEVELOPMENT
 $server_root = '/insearch';
+$sr = '/insearch';
 //LIVE WEBSITE
 //$server_root = '/';
 
@@ -13,7 +14,9 @@ function loadClass($classname)
 spl_autoload_register('loadClass');
 session_start();
 
-
+$db = new PDO('mysql:host=localhost;dbname=insearch','root','mysql');       
+$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
+$mainPerson = new MainPerson($db);
 
 
 //SIGN OUT
@@ -32,24 +35,44 @@ if(isset($_SESSION['perso']))
     
 }
 
-//IN CASE THE USER WANTS TO LOGIN
-if(isset($_POST['username']) && isset($_POST['password']))
+
+
+if(isset($_POST['signin']))
 {
-    if($_POST['username'] == 'user')
+    $personEmail = $_POST['email'];
+    $password = personalEncrypt($_POST['password']);
+    
+    if($mainPerson->idExists($staffID))
     {
-        if($_POST['password'] == 'user')
+        $user   = $mainPerson->checkUser($personEmail);
+        $word   = $user->getPassword();
+        
+        if($mainPerson->checkPassword($password, $word))
         {
-            $perso = $_COOKIE['PHPSESSID'];
-        }else{
-            unset($perso);
-            $error = 'Check your password';   
+            if($user->isActive())
+            {
+                $perso = $user;
+            }
+            else
+            {
+                unset($user);
+                $error = 'Something wrong with your account. Please contact us';
+            }
+        }
+        else
+        {
+            unset($user);
+            $error = 'Please, Double check your credentials.';
         }
     }
+    
     else
     {
-        $error = 'Check your username';
+        $error = 'Sorry, '.$personEmail. ' is not registered with us';
     }
+   
 }
+
 
 //CONNECTION ALREADY EXISTS
 if(isset($perso))

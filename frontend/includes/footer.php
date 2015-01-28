@@ -25,3 +25,4 @@
 </section>
 </div>  
 </footer>
+<?php include 'frontend/includes/login.php';?>

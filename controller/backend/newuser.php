@@ -43,7 +43,7 @@ if(isset($_POST['addAdmin']))
 
 if(!isset($admin))
 {
-    header('location: /admin');
+    header('location:'.$server_root.'/admin');
 }
 else
 {

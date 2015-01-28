@@ -640,6 +640,28 @@ section.section{
     font-family: Roboto, Lato, Futura, sans-serif;
 }
 
+
+
+/*MODAL*/
+.modal-body .input-group{
+    margin-bottom: 10px;
+}
+.modal-body .input-group input, .modal .btn{
+    height: 40px;
+}
+.modal .modal-footer{
+    background: #f1f1f1;
+}
+.modal .modal-header{
+    background: #f1f1f1;color:#333;
+}
+.modal .modal-header h2{
+    font-size:40px;
+    font-variant: small-caps;
+    font-family: Roboto, Lato, Futura, sans-serif;
+}
+
+
 @media only screen and (min-width : 768px) {
     .blog-link h3{
         font-size:14px;

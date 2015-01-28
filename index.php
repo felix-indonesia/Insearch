@@ -40,12 +40,11 @@
 /*********************************************************************
 *********************************FRONTEND*****************************
 *********************************************************************/
-$router->get('/', function(){include 'controller/frontend/home.php';});
-$router->post('/', function(){include 'controller/frontend/home.php';});
-$router->get('/signup/(\w+)', function($type){include 'controller/frontend/signin.php';});
-$router->post('/signup/(\w+)', function($type){include 'controller/frontend/signin.php';});
-$router->get('/events/(\w+)', function($type){include 'controller/frontend/events.php';});
-$router->post('/events/(\w+)', function($type){include 'controller/frontend/events.php';});
+$router->match('GET|POST', '/', function(){include 'controller/frontend/home.php';});
+$router->match('GET|POST', '/signup/(\w+)', function($type){include 'controller/frontend/signup.php';});
+$router->match('GET|POST', '/activate/user/(\d+)', function($id){include 'controller/frontend/activate.php';});
+$router->match('GET|POST', '/events/(\w+)', function($type){include 'controller/frontend/events.php';});
+
 
 $router->get('/eventmanager(/\d+(/[a-z0-9_-]+)?)?', function($id, $group){include 'controller/frontend/eventmanager.php';});
 $router->get('/event(/\d+(/[a-z0-9_-]+)?)?', function($id, $url){include 'controller/frontend/event.php';});

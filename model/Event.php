@@ -30,9 +30,7 @@ class Event extends Constructor
                 $youtube,
                 $facebook,
                 $added,
-                $eventType,
-                $eventID,
-                $adminID;
+                $eventType;
     
     
     
@@ -129,7 +127,7 @@ class Event extends Constructor
         return $this->startDate;
     }
     
-    public function geEndDate(){
+    public function getEndDate(){
         return $this->endDate;
     }
 	
@@ -163,6 +161,10 @@ class Event extends Constructor
     
     public function getEventType(){
         return $this->eventType;
+    }
+    
+    public function getFacebook(){
+        return $this->facebook;
     }
 
     
@@ -273,6 +275,11 @@ class Event extends Constructor
     public function setEventType($e){
         $this->eventType = $e;
     }
+    
+    public function setFacebook($e){
+        $this->facebook = $e;
+    }
+
 
 }
 

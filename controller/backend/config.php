@@ -1,54 +1,56 @@
 <?php
+session_start();
+date_default_timezone_set('Australia/Sydney');
 
-        date_default_timezone_set('Australia/Sydney');
+//FOR LOCAL DEVELOPMENT
+$server_root = '/insearch/';
+$sr = '/insearch/';
 
-        //FOR LOCAL DEVELOPMENT
-        $server_root = '/insearch/';
 
-        //Autoload classes
-        function loadClass($classname)
+
+//SIGN OUT
+if(isset($_GET['signout']))
+{
+    session_unset();
+    session_destroy();
+    header('location: '.$server_root.'admin');
+    exit();
+}
+
+//In case there is already a session, keep using it.
+if(isset($_SESSION['perso']))
+{
+    $admin = $_SESSION['perso'];
+    
+}
+
+
+//IN CASE THE USER WANTS TO LOGIN
+if(isset($_POST['username']) && isset($_POST['password']))
+{
+    if($_POST['username'] == 'admin')
+    {
+        if($_POST['password'] == 'admin')
         {
-            require 'model/'.$classname.'.php';
+            $admin = $_COOKIE['PHPSESSID'];
+        }else{
+            unset($admin);
+            $error = 'Check your password';   
         }
-        spl_autoload_register('loadClass');
-        session_start();
+    }
+    else
+    {
+        $error = 'Check your username';
+    }
+}
 
 
-        //SIGN OUT
-        if(isset($_GET['signout']))
-        {
-            session_unset();
-            session_destroy();
-            header('location: '.$server_root.'admin');
-            exit();
-        }
-
-        //In case there is already a session, keep using it.
-        if(isset($_SESSION['admin']))
-        {
-            $admin = $_SESSION['PHPSESSID'];
-
-        }
-
-
-
-        //CONNECTION ALREADY EXISTS
-        if(isset($admin))
-        {
-            $_SESSION['admin'] = $admin;
-
-        }
-
-
-
-
-        //initial database
-        $db = new PDO('mysql:host=localhost;dbname=open','root','mysql');
-
-        //if there is error in login
-        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
-        $mainPerson     = new MainPerson($db);
-
+//CONNECTION ALREADY EXISTS
+if(isset($admin))
+{
+    $_SESSION['perso'] = $admin;
+    
+}
 
 //INCLUDE ALL THE FUCTIONS
 include 'controller/functions.php';

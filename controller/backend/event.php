@@ -3,7 +3,7 @@ include 'controller/backend/config.php';
 
 if(!isset($admin))
 {
-    header('location: /admin');
+    header('location:'.$server_root.'/admin');
 }
 else
 {
